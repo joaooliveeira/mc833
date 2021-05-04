@@ -20,13 +20,14 @@ cJSON *filter_profiles_by_skill(cJSON *profile_list, char *skill);
 void save_profile_file(cJSON *profile_list, FILE *profiles_file);
 void init_profiles_system(int sockfd);
 
-int main() { 
-	int listenfd, connfd, len; 
+int main() {
+	pid_t pid;
+	int socketfd, new_socketfd, len; 
 	struct sockaddr_in servaddr, cli; 
 
 	// Socket create and verification 
-	listenfd = socket(AF_INET, SOCK_STREAM, 0); 
-	if (listenfd == -1) { 
+	socketfd = socket(AF_INET, SOCK_STREAM, 0); 
+	if (socketfd == -1) { 
 		printf("socket creation failed...\n"); 
 		exit(0); 
 	} else {
@@ -41,36 +42,42 @@ int main() {
 	servaddr.sin_port = htons(PORT);
 
 	// Binding newly created socket to given IP and verification 
-	if ((bind(listenfd, (SA*)&servaddr, sizeof(servaddr))) != 0) { 
-		printf("socket bind failed...\n"); 
-		exit(0); 
-	} else {
-		printf("Socket successfully binded..\n"); 
+	if ((bind(socketfd, (SA*)&servaddr, sizeof(servaddr))) != 0) {
+        printf("socket bind failed...\n");
+        exit(0);
+    } else {
+        printf("Socket successfully binded..\n");
 	}
 
 	// Now server is ready to listen and verification 
-	if ((listen(listenfd, 5)) != 0) { 
+	if ((listen(socketfd, 5)) != 0) { 
 		printf("Listen failed...\n"); 
-		exit(0); 
+		exit(0);
 	} else {
 		printf("Server listening..\n"); 
 	}
 
-	len = sizeof(cli); 
+	while (1)
+	{
+		len = sizeof(cli); 
+		// Accept the data packet from client and verification 
+		new_socketfd = accept(socketfd, (SA*)&cli, &len);
 
-	// Accept the data packet from client and verification 
-	connfd = accept(listenfd, (SA*)&cli, &len);
+		if (new_socketfd < 0) { 
+			printf("server acccept failed...\n"); 
+		} else {
+			printf("server acccept the client...\n");
 
-	if (connfd < 0) { 
-		printf("server acccept failed...\n"); 
-		exit(0); 
-	} else {
-		printf("server acccept the client...\n"); 
+			if ((pid = fork()) == 0) {
+				close(socketfd);
+				init_profiles_system(new_socketfd);
+				exit(0);
+			}
+		}
+
+		close(new_socketfd); 
 	}
-
-	init_profiles_system(connfd); 
-
-	close(listenfd); 
+	
 } 
 
 void init_profiles_system(int sockfd) { 
@@ -108,7 +115,9 @@ void init_profiles_system(int sockfd) {
 		bzero(buff, MAX); 
 
 		// read the message from client and copy it in buffer 
-		read(sockfd, buff, sizeof(buff));
+		if ((read(sockfd, buff, sizeof(buff))) <= 0) {
+			break;
+		}
 
 		// print buffer which contains the client contents 
 		printf("Command from client : %s\n", buff); 
@@ -234,17 +243,6 @@ void init_profiles_system(int sockfd) {
 
 			write(sockfd, buff, sizeof(buff));
 		}
-
-		// Command for exit, close server, save
-		if (strncmp("exit", buff, 4) == 0) { 
-			printf("Server Exit...\n"); 
-			profiles_file=fopen("profiles.txt","w"); 
-			fprintf(profiles_file, "%s", cJSON_Print(profile_list));
-			fclose(profiles_file);
-
-			cJSON_Delete(profile_list);
-			break; FILE *profiles_file;
-		} 
 	} 
 }
 

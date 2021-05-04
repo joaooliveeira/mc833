@@ -25,12 +25,6 @@ int main() {
 
 	// Socket create and verificação 
 	sockfd = socket(AF_INET, SOCK_STREAM, 0); 
-	if (sockfd == -1) { 
-		printf("socket creation failed...\n"); 
-		exit(0); 
-	} else {
-		printf("Socket successfully created...\n"); 
-	}
 
 	bzero(&servaddr, sizeof(servaddr)); 
 
@@ -206,10 +200,6 @@ void run_profiles_system(int sockfd) {
 			printf("%s\n", buff);
 			printf("\n-------------------------------------------------------------\n");
 		}
-		
-		if ((strncmp(buff, "exit", 4)) == 0) { 
-			break; 
-		} 
 	} 
 }
 
