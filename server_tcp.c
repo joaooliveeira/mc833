@@ -5,7 +5,7 @@
 #include <string.h> 
 #include <sys/socket.h> 
 #include <sys/types.h> 
-#include <cjson/cJSON.h>
+#include "cJSON.h"
 
 #define MAX 10000 // Size of buffer
 #define PORT 8080
