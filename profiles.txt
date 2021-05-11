@@ -15,4 +15,141 @@
 			}, {
 				"description":	"Watermelon"
 			}]
+	}, {
+		"email":	"f196645@dac.unicamp.br",
+		"first_name":	"Fabricio",
+		"last_name":	"Braga",
+		"city":	"Campinas",
+		"academic_background":	"Ciência da computação",
+		"graduation_year":	"2021",
+		"skills":	[{
+				"description":	"C"
+			}, {
+				"description":	"Java"
+			}, {
+				"description":	"Python"
+			}],
+		"experiences":	[{
+				"description":	"SF Editora"
+			}, {
+				"description":	"Pensalab"
+			}, {
+				"description":	"Buchi"
+			}, {
+				"description":	"Allscience"
+			}, {
+				"description":	"MS+"
+			}, {
+				"description":	"CI&T"
+			}]
+	}, {
+		"email":	"taffarel@brasil.com.br",
+		"first_name":	"Claudio",
+		"last_name":	"Taffarel",
+		"city":	"Santa Rosa",
+		"academic_background":	"História",
+		"graduation_year":	"2023",
+		"skills":	[{
+				"description":	"Goleiro"
+			}, {
+				"description":	"Defesa"
+			}],
+		"experiences":	[{
+				"description":	"Brasil"
+			}, {
+				"description":	"Reggiana"
+			}]
+	}, {
+		"email":	"Jorginho@brasil.com.br",
+		"first_name":	"Jorge",
+		"last_name":	"Campos",
+		"city":	"Rio de Janeiro",
+		"academic_background":	"História",
+		"graduation_year":	"2021",
+		"skills":	[{
+				"description":	"Lateral"
+			}, {
+				"description":	"Defesa"
+			}, {
+				"description":	"Velocidade"
+			}],
+		"experiences":	[{
+				"description":	"Brasil"
+			}, {
+				"description":	"Bayern"
+			}]
+	}, {
+		"email":	"ronaldao@brasil.com.br",
+		"first_name":	"Ronaldo",
+		"last_name":	"Jesus",
+		"city":	"São Paulo",
+		"academic_background":	"História",
+		"graduation_year":	"2021",
+		"skills":	[{
+				"description":	"Zagueiro"
+			}, {
+				"description":	"Defesa"
+			}, {
+				"description":	"Cara de mau"
+			}],
+		"experiences":	[{
+				"description":	"Brasil"
+			}, {
+				"description":	"Shimizu S-Pulse"
+			}]
+	}, {
+		"email":	"cafu@brasil.com.br",
+		"first_name":	"Marcos",
+		"last_name":	"Morais",
+		"city":	"Itaquaquecetuba",
+		"academic_background":	"História",
+		"graduation_year":	"2023",
+		"skills":	[{
+				"description":	"Lateral"
+			}, {
+				"description":	"Liderança"
+			}, {
+				"description":	"Comunicação"
+			}],
+		"experiences":	[{
+				"description":	"Brasil"
+			}, {
+				"description":	"São Paulo"
+			}]
+	}, {
+		"email":	"romario@brasil.com.br",
+		"first_name":	"Romario",
+		"last_name":	"Faria",
+		"city":	"Rio de Janeiro",
+		"academic_background":	"História",
+		"graduation_year":	"2022",
+		"skills":	[{
+				"description":	"Atacante"
+			}, {
+				"description":	"Finalização"
+			}],
+		"experiences":	[{
+				"description":	"Brasil"
+			}, {
+				"description":	"Barcelona"
+			}]
+	}, {
+		"email":	"bebeto@brasil.com.br",
+		"first_name":	"José Roberto",
+		"last_name":	"Oliveira",
+		"city":	"Salvador",
+		"academic_background":	"História",
+		"graduation_year":	"2021",
+		"skills":	[{
+				"description":	"Atacante"
+			}, {
+				"description":	"Comemorações"
+			}],
+		"experiences":	[{
+				"description":	"Brasil"
+			}, {
+				"description":	"Deportivo La Coruña"
+			}, {
+				"description":	"Flamengo"
+			}]
 	}]
