@@ -1,0 +1,55 @@
+[{
+		"email":	"joaog.oliveira96@gmail.com",
+		"first_name":	"João Guilherme",
+		"last_name":	"Oliveira",
+		"city":	"Campinas",
+		"academic_background":	"Ciência da Computação",
+		"graduation_year":	"2022",
+		"skills":	[{
+				"description":	"Comunicação"
+			}, {
+				"description":	"Desafios"
+			}],
+		"experiences":	[{
+				"description":	"Dalben"
+			}, {
+				"description":	"Watermelon"
+			}, {
+				"description":	"Bonito"
+			}]
+	}, {
+		"email":	"pedro.gustavo@teste.com",
+		"first_name":	"Pedro",
+		"last_name":	"Gustavo",
+		"city":	"Campinas",
+		"academic_background":	"ti",
+		"graduation_year":	"2030",
+		"skills":	[],
+		"experiences":	[]
+	}, {
+		"email":	"ana@teste.com",
+		"first_name":	"Ana",
+		"last_name":	"Clara",
+		"city":	"Campinas",
+		"academic_background":	"beleza",
+		"graduation_year":	"2001",
+		"skills":	[],
+		"experiences":	[{
+				"description":	"teste"
+			}]
+	}, {
+		"email":	"pedro@teste.com",
+		"first_name":	"Pedro",
+		"last_name":	"Oliveira",
+		"city":	"Campinas",
+		"academic_background":	"Física",
+		"graduation_year":	"2032",
+		"skills":	[{
+				"description":	"Comunicação"
+			}],
+		"experiences":	[{
+				"description":	"Vídeo Game"
+			}, {
+				"description":	"Futebol"
+			}]
+	}]
